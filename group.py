@@ -1,6 +1,6 @@
 import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'role.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Kellina.settings')
 
 import django
 
