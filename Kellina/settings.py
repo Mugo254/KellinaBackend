@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,12 +38,35 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authorization',
+    'api',
     'rest_framework',
     'corsheaders',
+   'rest_framework.authtoken',
 ]
 
-AUTH_USER_MODEL = 'authorization.User'
+AUTH_USER_MODEL = 'api.User'
+
+
+
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+
+#     'ALGORITHM': 'HS256',
+#     'SIGNING_KEY': SECRET_KEY,
+#     'LEEWAY': 0,
+
+#     'AUTH_HEADER_TYPES': ('Bearer',),
+#     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+#     'USER_ID_FIELD': 'id',
+#     'USER_ID_CLAIM': 'user_id',
+#     'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
+
+#     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+#     'TOKEN_TYPE_CLAIM': 'token_type',
+#     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
